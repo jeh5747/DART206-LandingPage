@@ -1,0 +1,79 @@
+/*****************************
+BASIC STYLES
+******************************/
+
+body {
+  margin: 0;
+  padding: 30px; /* Pushes content away from the edges of the browser */
+  background: orange; /* Background color */
+  font-family: sans-serif; /* Sets font family for entire page, unless you declare something else below */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: blue; /* Color for all headers */
+}
+
+/* Links */
+a {
+  color: white;
+  text-decoration: none; /* Removes underline from hyperlinks */
+}
+
+/* Hover effects */
+a:hover {
+  color: dodgerblue;
+}
+
+/*****************************
+GRID CONTAINER
+******************************/
+.grid-container {
+  display: grid; /* Don't delete this line */
+  grid-template-columns: repeat(12, 1fr); /* Sets up 12 equal columns */
+  grid-gap: 10px; /* Sets gap between sections */
+}
+
+/*****************************
+ALL SECTIONS 
+This targets all <section> elements irregardless of class. 
+******************************/
+section {
+  padding: 15px;
+}
+
+/*****************************
+INDIVIDUAL SECTIONS 
+Change the class names to fit your content (e.g. ".header" or ".bio") and delete anything you don't need.
+******************************/
+.one {
+  grid-column: span 12; /* Spans full width of 12 column container */
+}
+
+.two {
+  grid-column: span 6; /* Spans 6 columns (out of 12) */
+}
+.three {
+  grid-column: span 6; /* Spans 6 columns (out of 12) */
+}
+.four {
+  grid-column: 3 / 11; /* Instead of defining the size with "span" this section begins at column-line-3 and ends at column-line-11 (note that 12 columns create 13 column-lines between the columns), view lines using the browser inspector. */
+  text-align: center; /* Centers the text horizontally */
+}
+.five {
+  font-style: italic;
+  grid-column: 3 / 11; /* Instead of defining the size with "span" this section begins at column-line-3 and ends at column-line-11 (note that 12 columns create 13 column-lines between the columns), view lines using the browser inspector. */
+  text-align: center; /* Centers the text horizontally */
+}
+
+/*****************************
+ FOR MOBILE DEVICES:
+ When the browser is smaller than 600px wide,
+ all sections become 12 columns wide (full width).
+ TRY RESIZING YOUR BROWSER TO SEE THIS IN ACTION.
+ ******************************/
+@media (max-width: 600px) {
+  .grid-container section {
+    grid-column: span 12;
+  }
+}
